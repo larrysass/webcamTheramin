@@ -1,0 +1,29 @@
+body {
+    padding: 20px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.canvasbox {
+    border-radius: 3px;
+    margin-right: 10px;
+    width: 850px;  
+}
+
+.mb10 {
+    margin-bottom: 10px
+}
+
+.mt10 {
+    margin-top: 10px
+}
+
+.updatenote {
+ 
+}
+
+.videobox{
+    display: none;
+}
