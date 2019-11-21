@@ -41,13 +41,13 @@ function changeSound(input) {
     document.getElementById("frequencyP").innerText = newFrequency
 }
 
-function changeSound2hands(input) {
-    if (input=== undefined){return}
-    let frequency1 = input[0]["bbox"][0]
-    let frequency2 = input[1]["bbox"][1]
-    oscillator.frequency.setValueAtTime(frequency1, audioContext.currentTime)
-    oscillator2.frequency.setValueAtTime(frequency2, audioContext.currentTime)
-}
+// function changeSound2hands(input) {
+//     if (input=== undefined){return}
+//     let frequency1 = input[0]["bbox"][0]
+//     let frequency2 = input[1]["bbox"][1]
+//     oscillator.frequency.setValueAtTime(frequency1, audioContext.currentTime)
+//     oscillator2.frequency.setValueAtTime(frequency2, audioContext.currentTime)
+// }
 function startVideo() {
     handTrack.startVideo(video).then(function (status) {
         console.log("video started", status);
