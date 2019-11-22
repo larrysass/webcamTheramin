@@ -1,6 +1,8 @@
 const video = document.getElementById("myvideo");
 const canvas = document.getElementById("canvas");
+
 const context = canvas.getContext("2d");
+
 let trackButton = document.getElementById("trackbutton");
 let updateNote = document.getElementById("updatenote");
 
@@ -14,12 +16,12 @@ oscillator.type = "sine"
 oscillator.frequency.value = frequency
 oscillator.connect(audioContext.destination)
 
-var frequency2 = 261.6
+// var frequency2 = 261.6
 // var audioContext2 = new AudioContext()
-var oscillator2 = audioContext.createOscillator()
-oscillator2.type = "sine"
-oscillator2.frequency.value = frequency2
-oscillator2.connect(audioContext.destination)
+// var oscillator2 = audioContext.createOscillator()
+// oscillator2.type = "sine"
+// oscillator2.frequency.value = frequency2
+// oscillator2.connect(audioContext.destination)
 
 const modelParams = {
     flipHorizontal: true,   // flip e.g for video  
@@ -86,11 +88,12 @@ function runDetection() {
         changeSound(predictions[0]) 
         }
         model.renderPredictions(predictions, canvas, context, video);
-        if (isVideo) {
+        if (videoOn) {
             requestAnimationFrame(runDetection);
         }
     });
 }
+
 
 // Load the model.
 handTrack.load(modelParams).then(lmodel => {
@@ -99,3 +102,5 @@ handTrack.load(modelParams).then(lmodel => {
     updateNote.innerText = "Loaded Model!"
     trackButton.disabled = false
 });
+
+
