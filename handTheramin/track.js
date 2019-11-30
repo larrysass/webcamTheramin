@@ -16,12 +16,12 @@ oscillator.type = "sine"
 oscillator.frequency.value = frequency
 oscillator.connect(audioContext.destination)
 
-// var frequency2 = 261.6
-// var audioContext2 = new AudioContext()
-// var oscillator2 = audioContext.createOscillator()
-// oscillator2.type = "sine"
-// oscillator2.frequency.value = frequency2
-// oscillator2.connect(audioContext.destination)
+var frequency2 = 261.6
+var audioContext2 = new AudioContext()
+var oscillator2 = audioContext.createOscillator()
+oscillator2.type = "sine"
+oscillator2.frequency.value = frequency2
+oscillator2.connect(audioContext.destination)
 
 const modelParams = {
     flipHorizontal: true,   // flip e.g for video  
