@@ -30,6 +30,8 @@ const modelParams = {
     scoreThreshold: 0.6,    // confidence threshold for predictions.
 }
 
+oscillator.start()
+
 function enableHand2() {
     oscillator2.start()
 }
@@ -39,7 +41,10 @@ function changeSound(input) {
         return
     }
      let newFrequency = (input["bbox"][1] + input["bbox"][0])
+
     oscillator.frequency.setValueAtTime(newFrequency, audioContext.currentTime)
+
+
     document.getElementById("frequencyP").innerText = newFrequency
 }
 
@@ -62,6 +67,8 @@ function startVideo() {
         }
     });
 }
+
+    oscillator.stop()
 
 function toggleVideo() {
     if (!isVideo) {
