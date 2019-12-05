@@ -16,7 +16,7 @@ oscillator.type = "sine"
 oscillator.frequency.value = frequency
 oscillator.connect(audioContext.destination)
 
-var scale = []
+
 
 // var frequency2 = 261.6
 // var audioContext2 = new AudioContext()
@@ -25,12 +25,15 @@ var scale = []
 // oscillator2.frequency.value = frequency2
 // oscillator2.connect(audioContext.destination)
 
+
 const modelParams = {
     flipHorizontal: true,   // flip e.g for video  
     maxNumBoxes: 20,        // maximum number of boxes to detect
     iouThreshold: 0.5,      // ioU threshold for non-max suppression
     scoreThreshold: 0.6,    // confidence threshold for predictions.
 }
+
+oscillator.start()
 
 function enableHand2() {
     oscillator2.start()
@@ -45,6 +48,7 @@ function changeSound(input) {
         console.log()
     oscillator.frequency.setValueAtTime(autoTune(newFrequency), audioContext.currentTime)
     // document.getElementById("frequencyP").innerText = cScale(newFrequency)[1]
+
 }
 
 
@@ -165,6 +169,8 @@ function startVideo() {
         }
     });
 }
+
+    oscillator.stop()
 
 function toggleVideo() {
     if (!isVideo) {
