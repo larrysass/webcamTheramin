@@ -16,6 +16,9 @@ oscillator.type = "sine"
 oscillator.frequency.value = frequency
 oscillator.connect(audioContext.destination)
 
+var scale = []
+var intervals = [2,4,5,7,9,11]
+
 
 
 // var frequency2 = 261.6
@@ -33,8 +36,6 @@ const modelParams = {
     scoreThreshold: 0.6,    // confidence threshold for predictions.
 }
 
-oscillator.start()
-
 function enableHand2() {
     oscillator2.start()
 }
@@ -44,7 +45,7 @@ function changeSound(input) {
         return
     }
     //  let newFrequency = (input["bbox"][1] + input["bbox"][0])
-        let newFrequency = (input["bbox"][0] + 200)
+        let newFrequency = (input["bbox"][0] + 350)
         console.log()
     oscillator.frequency.setValueAtTime(autoTune(newFrequency), audioContext.currentTime)
     // document.getElementById("frequencyP").innerText = cScale(newFrequency)[1]
@@ -52,24 +53,25 @@ function changeSound(input) {
 }
 
 
-function scalePrinter(start) {
+function scalePrinter(start, intervals) {
     let output = []
     let frequency = start
     let i = 0
     let counter = 1
     while(i < 96) {
     frequency = frequency *2**(1/12)
-    if(counter === 0 || counter === 2 || counter === 4 || counter === 5 || counter === 7 || counter === 9 || counter === 11) {
+    if(counter === 0 || intervals.includes(counter)) {
     output.push(frequency)
     }
     if(counter === 11){
-      counter = 0
+    counter = 0
     } 
     else {counter ++}  
     i++
     } 
     return output
-}
+  }
+
 
 // function cScale(input) {
 // let output = 0
@@ -140,8 +142,8 @@ function scalePrinter(start) {
 // }
 
 function autoTune(input) {
-   let output = null 
-   let i = 0
+let output = null 
+let i = 0
     while(output === null) {
         if(input > scale[i] && input <= scale[i+1]) {
             output = scale[i+1]
@@ -169,8 +171,6 @@ function startVideo() {
         }
     });
 }
-
-    oscillator.stop()
 
 function toggleVideo() {
     if (!isVideo) {
@@ -213,7 +213,12 @@ handTrack.load(modelParams).then(lmodel => {
     trackButton.disabled = false
 });
 
+
 function scaleSelector(input) {
-    scale = scalePrinter(input)
+    scale = scalePrinter(input, intervals)
     console.log(scale)
+}
+
+function changeIntervals(input) {
+    intervals = input
 }
