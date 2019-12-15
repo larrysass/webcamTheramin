@@ -20,7 +20,6 @@ var scale = []
 var intervals = [2,4,5,7,9,11]
 
 
-
 // var frequency2 = 261.6
 // var audioContext2 = new AudioContext()
 // var oscillator2 = audioContext.createOscillator()
@@ -35,7 +34,7 @@ const modelParams = {
     iouThreshold: 0.5,      // ioU threshold for non-max suppression
     scoreThreshold: 0.6,    // confidence threshold for predictions.
 }
-
+ 
 function enableHand2() {
     oscillator2.start()
 }
@@ -222,3 +221,12 @@ function scaleSelector(input) {
 function changeIntervals(input) {
     intervals = input
 }
+
+
+
+
+
+
+
+
+
