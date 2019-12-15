@@ -5,4 +5,4 @@ I built this using [handtrack.js](https://victordibia.github.io/handtrack.js/#/)
 
 
 
-I blogged about using some of this technology and figuring out the ways to use it if you check my [medium](https://medium.com/@larry.sassainsworth)
+I blogged about using some of this technology and figuring out the ways to use it if you check my [medium](https://medium.com/@larry.sassainsworth).
