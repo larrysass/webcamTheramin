@@ -133,9 +133,7 @@ function runDetection() {
 }
 
 
-// Load the model.
 handTrack.load(modelParams).then(lmodel => {
-    // detect objects in the image.
     model = lmodel
     updateNote.innerText = "Loaded Model!"
     trackButton.disabled = false
@@ -150,9 +148,3 @@ function scaleSelector(input) {
 function changeIntervals(input) {
     intervals = input
 }
-
-
-console.log(pizza) // // ReferenceError: pizza is not defined
-let pizza = "delicious"
-
-
