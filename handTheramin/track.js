@@ -66,76 +66,8 @@ function scalePrinter(start, intervals) {
     i++
     } 
     return output
-  }
+}
 
-
-// function cScale(input) {
-// let output = 0
-//     if(input < 110) {
-//     output = [110, "A2"]
-//     }
-//     else if (input > 110 && input <= 123.47) {
-//     output = [123.47, "B2"]
-//     }
-//     else if (input > 123.47 && input <= 130.81) {
-//     output = [130.81, "C3"]
-//     }
-//     else if (input > 130.81 && input <= 146.83) {
-//     output = [146.83, "D3"]
-//     }
-//     else if (input > 146.83 && input <= 164.81) {
-//     output = [164.81, "E3"]
-//     }
-//     else if (input > 164.81 && input <= 174.61) {
-//     output = [174.61, "F3"]
-//     }
-//     else if (input > 174.61 && input <= 196.00) {
-//     output = [196.00, "G3"]
-//     }
-//     else if (input > 196.00 && input <= 220.00) {
-//     output = [220.00, "A3"]
-//     }
-//     else if (input > 220.00 && input <= 246.94) {
-//     output = [246.94, "B3"]
-//     }
-//     else if (input > 246.94 && input <= 261.63) {
-//     output = [261.63, "C4"]
-//     }
-//     else if (input > 261.63 && input <= 293.66) {
-//     output = [293.66, "D4"]
-//     }
-//     else if (input > 293.66 && input <= 329.63) {
-//     output = [329.63, "E4"]
-//     }
-//     else if (input > 329.63 && input <= 349.23) {
-//     output = [349.23, "F4"]
-//     }
-//     else if (input > 349.23 && input <= 392.00) {
-//     output = [392.00, "G4"]
-//     }
-//     else if (input > 392.00 && input <= 440.00) {
-//     output = [440.00, "A4"]
-//     }
-//     else if (input > 440.00 && input <= 493.88) {
-//     output = [493.88, "B4"]
-//     }
-//     else if(input > 493.88 && input <= 523.25) {
-//     output = [523.25, "C5"]
-//     }
-//     else if(input > 523.25 && input <= 587.33) {
-//     output = [587.33, "D5"]
-//     }    
-//     else if(input > 587.33 && input <= 659.25) {
-//     output = [659.25, "E5"]
-//     }
-//     else if(input > 659.25 && input <= 698.46) {
-//     output = [698.46, "F5"]
-//     }
-//     else if(input > 698.46) {
-//     output = [783.99, "G5"]
-//         }
-// return output 
-// }
 
 function autoTune(input) {
 let output = null 
