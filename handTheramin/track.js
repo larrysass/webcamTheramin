@@ -9,15 +9,15 @@ let updateNote = document.getElementById("updatenote");
 let isVideo = false;
 let model = null;
 
-var frequency = 440
-var audioContext = new AudioContext()
-var oscillator = audioContext.createOscillator()
+let frequency = 440
+let audioContext = new AudioContext()
+let oscillator = audioContext.createOscillator()
 oscillator.type = "sine"
 oscillator.frequency.value = frequency
 oscillator.connect(audioContext.destination)
 
-var scale = []
-var intervals = [2,4,5,7,9,11]
+let scale = []
+let intervals = [2,4,5,7,9,11]
 
 
 // var frequency2 = 261.6
@@ -45,10 +45,7 @@ function changeSound(input) {
     }
     //  let newFrequency = (input["bbox"][1] + input["bbox"][0])
         let newFrequency = (input["bbox"][0] + 350)
-        console.log()
     oscillator.frequency.setValueAtTime(autoTune(newFrequency), audioContext.currentTime)
-    // document.getElementById("frequencyP").innerText = cScale(newFrequency)[1]
-
 }
 
 
@@ -223,10 +220,7 @@ function changeIntervals(input) {
 }
 
 
-
-
-
-
-
+console.log(pizza) // // ReferenceError: pizza is not defined
+let pizza = "delicious"
 
 
