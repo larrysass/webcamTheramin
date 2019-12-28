@@ -107,13 +107,6 @@ function toggleVideo() {
 
 function runDetection() {
     model.detect(video).then(predictions => {
-
-        // if(predictions.length > 1 ) {
-        //     changeSound2hands(predictions)
-        // }
-        // else {
-        // changeSound(predictions[0]) 
-        // }
         changeSound(predictions[0]) 
         model.renderPredictions(predictions, canvas, context, video);
         if (isVideo) {
