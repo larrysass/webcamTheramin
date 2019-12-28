@@ -1,14 +1,16 @@
+
+//<------- handtrack.js context ------->
 const video = document.getElementById("myvideo");
 const canvas = document.getElementById("canvas");
-
 const context = canvas.getContext("2d");
-
 let trackButton = document.getElementById("trackbutton");
 let updateNote = document.getElementById("updatenote");
 
+//checking if the video is engaged
 let isVideo = false;
 let model = null;
 
+//< --------Web Audio Context ------->
 let frequency = 440
 let audioContext = new AudioContext()
 let oscillator = audioContext.createOscillator()
@@ -16,17 +18,12 @@ oscillator.type = "sine"
 oscillator.frequency.value = frequency
 oscillator.connect(audioContext.destination)
 
+//setting up our scale
 let scale = []
 let intervals = [2,4,5,7,9,11]
 
-
-// var frequency2 = 261.6
-// var audioContext2 = new AudioContext()
-// var oscillator2 = audioContext.createOscillator()
-// oscillator2.type = "sine"
-// oscillator2.frequency.value = frequency2
-// oscillator2.connect(audioContext.destination)
-
+//pitch variable
+let pitch = 350
 
 const modelParams = {
     flipHorizontal: true,   // flip e.g for video  
@@ -43,7 +40,6 @@ function changeSound(input) {
     if(input === undefined) { 
         return
     }
-    //  let newFrequency = (input["bbox"][1] + input["bbox"][0])
         let newFrequency = (input["bbox"][0] + 350)
     oscillator.frequency.setValueAtTime(autoTune(newFrequency), audioContext.currentTime)
 }
@@ -80,13 +76,7 @@ let i = 0
     }
     return output
 }
-// function changeSound2hands(input) {
-//     if (input=== undefined){return}
-//     let frequency1 = input[0]["bbox"][0]
-//     let frequency2 = input[1]["bbox"][1]
-//     oscillator.frequency.setValueAtTime(frequency1, audioContext.currentTime)
-//     oscillator2.frequency.setValueAtTime(frequency2, audioContext.currentTime)
-// }
+
 function startVideo() {
     handTrack.startVideo(video).then(function (status) {
         console.log("video started", status);
@@ -148,3 +138,4 @@ function scaleSelector(input) {
 function changeIntervals(input) {
     intervals = input
 }
+
